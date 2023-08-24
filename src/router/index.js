@@ -4,7 +4,7 @@ import Add from '../components/addProd.vue' ;
 import edit from '../components/editProd.vue' ;
 const routes = [
     {    
-      path: '/all',
+      path: '/',
       component: Prods 
     },
     {    

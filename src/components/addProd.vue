@@ -26,6 +26,8 @@
     </div>
   </template>
   <script>
+
+
   export default {
     name: 'add',
     data() {
@@ -36,6 +38,20 @@
   methods : {
       addProd() {
       console.log(this.product);
+        try {
+            fetch("https://sixth-zp4e.onrender.com/products", {
+             method : "POST",
+             headers: {
+                    'Content-type' : 'application/json'
+             },
+                body: JSON.stringify(this.product)
+          }).then(response => response.json()).then(data => {
+            this.product = data ;
+            console.log(this.product) ;
+          })
+        }catch(error) {
+            console.log(this.error) ;
+        }
       }
   }, 
   created() {
